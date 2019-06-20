@@ -53,7 +53,7 @@ public class VinhoService implements ICrudService<Vinho> {
         return vinhos.stream().max(Comparator.comparing(Vinho::getSafra)).get();
     }
 
-    public List<Vinho> getVinhoBySafra(int safra){
+    public List<Vinho> getVinhosBySafra(int safra){
         List<Vinho> vinhos =  vinhoRepository.findAllVinhos();
         return vinhos.stream().filter(vinho -> vinho.getSafra() == safra).collect(Collectors.toList());
     }
